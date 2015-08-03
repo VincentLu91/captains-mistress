@@ -16,6 +16,20 @@ RSpec.describe Game, "#winner?" do
     it "indicates no winner" do
       expect(fresh_game.winner?).to eql(false)
     end
+
+    it "rack prints 7 rows" do
+      rack = fresh_game.rack
+      expect(rack.length).to eql(7)
+    end
+
+    it "rack prints 6 cols" do
+      rack = fresh_game.rack
+      expect(rack.all? { |col|  col.length == 6 } ).to be(true)
+    end
+
+    it "returns an empty rack" do
+      expect(fresh_game.rack).to eql(["------", "------", "------", "------", "------", "------", "------"])
+    end
   end
   
   # more tests go here
