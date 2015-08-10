@@ -9,24 +9,8 @@ class Game
   end
 
   def rack
-    #
-    temp1 = @rack.dup
-
-    @rack.
-      map { |col| col.concat(["-"] * (6 - col.length)) }.
-      map { |col| col.join  } #.transpose.map { |row| row.join() }
-
-    #
-    #temp2 = @rack.dup
-
-    
-    #if temp1 == temp2
-    #  puts "good"
-    #else
-    #  puts "bad"
-    #end
-    
-    #@rack
+    @rack.map { |col| col.concat(["-"] * (6 - col.length)) }
+         .map { |col| col.join }
   end
 
 private
