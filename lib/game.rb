@@ -9,7 +9,8 @@ class Game
   end
 
   def rack
-    @rack.map { |col| col.concat(["-"] * (6 - col.length)) }
+    the_rack = Marshal.load(Marshal.dump(@rack))
+    the_rack.map { |col| col.concat(["-"] * (6 - col.length)) }
          .map { |col| col.join }
   end
 
